@@ -1,5 +1,5 @@
 {
-  "name": "productivity-hub",
+  "name": "ticketflow",
   "version": "1.0.0",
   "description": "Full-stack productivity web application with Kanban boards, Pomodoro timer, and time tracking",
   "scripts": {

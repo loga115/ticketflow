@@ -96,7 +96,7 @@ A comprehensive **Jira-inspired ticket management system** with intelligent empl
 ## Project Structure
 
 ```
-productivity-hub-2/
+ticketflow/
 ├── backend/
 │   ├── config/
 │   │   └── supabase_client.py      # Database connection
@@ -240,6 +240,8 @@ python seed_data.py
 ---
 
 ## API Documentation
+
+You may use the attached python codes reset_test_data.py and test_endpoints.py as an example of testing the endpoints.
 
 ### Ticket Endpoints
 

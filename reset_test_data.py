@@ -6,8 +6,8 @@ from os import getenv
 import requests
 import json
 
-# Configuration
-BASE_URL = "http://localhost:8000/api"
+# Configuration 
+BASE_URL = "http://ticketflow-2-n132.onrender.com/api" # change for local/global testing
 AUTH_TOKEN = getenv("TEST_AUTH_TOKEN", "YOUR_TOKEN_HERE")  # Use the same token from test_endpoints.py
 
 headers = {

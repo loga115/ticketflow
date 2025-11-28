@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Plus, Search, Edit2, Trash2, X, Users } from 'lucide-react';
-import api from '../lib/api';
+import api from '../services/api';
 import { useApiNotifications } from '../hooks/useApiNotifications';
 import './EmployeeManager.css';
 
@@ -71,7 +71,7 @@ const EmployeeManager = () => {
 
   const fetchEmployees = async () => {
     try {
-      const response = await api.get('/employees');
+      const response = await api.get('/employees/');
       setEmployees(response.data?.employees || response.employees || []);
     } catch (error) {
       console.error('Error fetching employees:', error);
@@ -141,10 +141,10 @@ const EmployeeManager = () => {
       console.log('Submitting employee data:', submitData);
 
       if (editingEmployee) {
-        await api.put(`/employees/${editingEmployee.id}`, submitData);
+        await api.put(`/employees/${editingEmployee.id}/`, submitData);
         notifySuccess('Employee Updated', `${submitData.name} has been updated successfully`);
       } else {
-        await api.post('/employees', submitData);
+        await api.post('/employees/', submitData);
         notifySuccess('Employee Created', `${submitData.name} has been added to the team`);
       }
 
@@ -176,7 +176,7 @@ const EmployeeManager = () => {
 
     try {
       const employee = employees.find(e => e.id === id);
-      await api.delete(`/employees/${id}`);
+      await api.delete(`/employees/${id}/`);
       
       if (employee) {
         notifySuccess('Employee Deleted', `${employee.name} has been removed`);

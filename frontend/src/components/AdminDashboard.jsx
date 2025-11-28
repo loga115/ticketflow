@@ -107,9 +107,10 @@ const AdminDashboard = () => {
       if (assigneeFilter) params.append('assigned_to', assigneeFilter);
       if (searchTerm) params.append('search', searchTerm);
       
+      const queryString = params.toString();
       const [ticketsRes, employeesRes, categoriesRes, statsRes] = await Promise.all([
-        api.get(`/tickets?${params.toString()}`),
-        api.get('/employees'),
+        api.get(queryString ? `/tickets/?${queryString}` : '/tickets/'),
+        api.get('/employees/'),
         api.get('/tickets/categories'),
         api.get('/tickets/stats/overview')
       ]);

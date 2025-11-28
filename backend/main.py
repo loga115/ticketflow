@@ -48,6 +48,10 @@ if static_dir.exists():
     
     @app.get("/{full_path:path}")
     async def serve_frontend(full_path: str):
+        # Don't intercept API routes
+        if full_path.startswith("api/"):
+            return None
+        
         # Serve API docs
         if full_path in ["docs", "openapi.json", "redoc"]:
             return None  # Let FastAPI handle these

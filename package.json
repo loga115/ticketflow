@@ -1,0 +1,33 @@
+{
+  "name": "productivity-hub",
+  "version": "1.0.0",
+  "description": "Full-stack productivity web application with Kanban boards, Pomodoro timer, and time tracking",
+  "scripts": {
+    "install-all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "npm start --prefix backend"
+  },
+  "keywords": [
+    "productivity",
+    "kanban",
+    "pomodoro",
+    "time-tracker",
+    "react",
+    "nodejs",
+    "express",
+    "postgresql",
+    "supabase"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

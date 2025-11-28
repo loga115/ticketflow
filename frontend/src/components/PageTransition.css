@@ -1,0 +1,35 @@
+.page-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Fade and Vertical Slide Animation */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+/* Prevent layout shift during transition */
+.page-exit-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
